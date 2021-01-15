@@ -13,7 +13,7 @@ ENV PATH $PATH:${JAVA_HOME}/bin
 
 #install mycat
 ADD http://dl.mycat.org.cn/2.0/1.14-release/mycat2-1.14-release.tar.gz /usr/local
-RUN cd /usr/local && tar -zxvf mycat2-1.14-release.tar.gz && ls -lna
+RUN cd /usr/local && tar -xvf mycat2-1.14-release.tar.gz && ls -lna
 
 #download mycat-ef-proxy
 #RUN mkdir -p /usr/local/proxy

@@ -20,8 +20,8 @@ RUN cd /usr/local && tar -zxvf Mycat-server-1.6-RELEASE-20161028204710-linux.tar
 #RUN cd /usr/local/proxy && tar -zxvf MyCat-Entity-Framework-Core-Proxy.1.0.0-alpha2-netcore100.tar.gz && ls -lna && sed -i -e 's#C:\\\\mycat#/usr/local/mycat#g' config.json
 
 VOLUME /usr/local/mycat/conf
+VOLUME /usr/local/mycat/logs
 
 EXPOSE 8066 9066
-#EXPOSE 7066
 
-CMD /usr/local/mycat/bin/mycat console
+CMD ["/usr/local/mycat/bin/mycat", "console"]

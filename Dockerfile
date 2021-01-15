@@ -1,6 +1,7 @@
-FROM centos:7 
-RUN echo "root:root" | chpasswd
-RUN yum -y install net-tools
+FROM ubuntu:20.10
+RUN apt update && apt install -y locales net-tools && rm -rf /var/lib/apt/lists/* \
+    && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+ENV LANG en_US.utf8
 
 # install java
 ADD http://mirrors.linuxeye.com/jdk/jdk-7u80-linux-x64.tar.gz /usr/local/
